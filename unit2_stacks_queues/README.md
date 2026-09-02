@@ -33,7 +33,7 @@ Your reflection should be approximately 150–200 words and address the followin
 
 1. What concepts or skills did you learn while completing this assignment?
 
---> The two concepts that I learned while completing this assignment are stacks and queues.
+--> The two concepts that I learned while completing this assignment are stacks and queues. I also learned how to implement the concepts.
 
 
 2. What challenges did you encounter, and how did you overcome them?

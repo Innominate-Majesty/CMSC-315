@@ -16,7 +16,7 @@ import java.util.List;
  * specific positions, removing elements, traversing a list with
  * loops, and retrieving elements by index.
  *
- * @author FIRST LAST
+ * @author VENUS HO
  * @version 1.0
  */
 public class Unit3Project {
@@ -25,20 +25,33 @@ public class Unit3Project {
 
     public void addSong(String title) {
         // TODO: Add the provided song to the end of the playlist.
+
+        // Adds song to the end of the playlist
+        playlist.add(title);
     }
 
     public void insertSong(int index, String title) {
         // TODO: Insert the song at a specific position if the index is valid.
+
+        // check if the index is within a valid position in the playlist
+        if (index >= 0 && index <= playlist.size()) {
+
+            // insert song to the specific index
+            playlist.add(index, title);
+        }
     }
 
     public String removeSong(int index) {
         // TODO: Remove and return the song at the specified index.
-        return null;
+
+        // remove song at the specific index 
+        return playlist.remove(index);
     }
 
     public String getSpecificSong(int index) {
         // TODO: Return the song stored at the specified index.
-        return null;
+
+        return playlist.get(index);
     }
 
     public int size() {
@@ -50,6 +63,16 @@ public class Unit3Project {
         // Display "Current playlist:"
         // Traverse the playlist using a loop
         // Print each index and song title
+
+        System.out.println("Current playlist: ");
+
+        // loop through each song in playlist
+        for (int i = 0; i < playlist.size(); i++) {
+
+            // print index + song
+            System.out.println(i + ": " + playlist.get(i));
+            
+        }
     }
 
 
@@ -66,5 +89,5 @@ public class Unit3Project {
     }
 
 
-}
+    }
 

@@ -1,0 +1,14 @@
+# Keep the repository focused on course discussions and labs.
+/*
+!/.gitignore
+!/Discussions/
+!/Discussions/**
+!/Labs/
+!/Labs/**
+
+# Local, IDE, and generated files.
+.DS_Store
+.idea/
+target/
+*.class
+*.iml

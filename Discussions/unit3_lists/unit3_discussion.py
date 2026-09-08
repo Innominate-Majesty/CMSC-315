@@ -185,13 +185,25 @@ def main():
 
     print("\n=== EDGE CASES ===")
 
-    # Tries to delete an item using an invalid index.
+    # tries to delete an item using an invalid index
     invalid_delete = delete_at(numbers, 100)
     print("Delete with invalid index:", invalid_delete)
 
-    # Searches for a value that is not in the list.
+    # searches for a value that is not in the list
     missing_value = search_value(numbers, 999)
     print("Search for missing value:", missing_value)
+
+    # creates an empty list
+    empty_list = []
+
+    # inserts a value into the empty list
+    insert_at(empty_list, 0, 50)
+    print("Insert into empty list:", empty_list)
+
+    # tries to delete from an empty list
+    another_empty_list = []
+    empty_delete = delete_at(another_empty_list, 0)
+    print("Delete from empty list:", empty_delete)
 
 if __name__ == "__main__":
     main()

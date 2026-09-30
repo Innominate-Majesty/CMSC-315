@@ -1,5 +1,8 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class Unit6ProjectTest {
 
@@ -106,4 +109,31 @@ public class Unit6ProjectTest {
                 "PASS: Updating existing SKU P100 changed the quantity to 20 without increasing inventory size."
         );
     }
+
+    // TODO: removeMissingItemReturnsFalse()
+    // This test verifies that removeItem behaves correctly when the SKU doesn't exist in the inventory
+
+    @Test
+    void removeMissingItemReturnsFalse() {
+
+        // create a new Unit6Project object with an empty inventory
+        Unit6Project app = new Unit6Project();
+
+        // add SKU P450 with a quantity of 32 to the inventory
+        app.addOrUpdateItem("P450", 32);
+
+        // try to remove SKU P875 (not in inventory)
+        boolean removed = app.removeItem("P875");
+
+        // verify that removeItem returns false because SKU P875 doesn't exist
+        assertFalse(removed, "removeItem should return false when SKU P875 doesn't exist");
+
+        // verify that the inventory size remains the same (1) because nothing was removed
+        assertEquals(1, app.size(), "The inventory size should remain 1 when a missing SKU is not removed");
+
+        // Print Pass message
+        System.out.println("PASS: removeItem returned false for attempting to remove missing SKU P875 from inventory. The inventory size remains 1 since no item were removed.");
+
+    }
+
 }

@@ -1,5 +1,7 @@
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class Unit7ProjectTest {
 
@@ -98,4 +100,27 @@ public class Unit7ProjectTest {
                 "PASS: selectionSort sorted the price array in ascending order."
         );
     }
+
+    // TODO: create selectionSortHandlesEmptyArray() that verifies that selectionSort safely handles an empty price array
+
+    @Test
+    void selectionSortHandlesEmptyArray() {
+
+        // create a new Unit7Project object
+        Unit7Project app = new Unit7Project();
+
+        // create an empty price array
+        int[] prices = {};
+
+        // check that selectionSort doesn't throw an exception
+        assertDoesNotThrow(() -> app.selectionSort(prices));
+
+        // check that the array is still empty after sorting
+        assertArrayEquals (new int[]{}, prices, "selectionSort should safely handle an empty array.\n");
+
+         // prints a message if the test passes
+        System.out.println("PASS: selectionSort safely handled an empty price array.\n");
+
+    }
+
 }

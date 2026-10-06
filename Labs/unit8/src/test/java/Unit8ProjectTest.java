@@ -1,5 +1,7 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class Unit8ProjectTest {
 
@@ -81,6 +83,25 @@ public class Unit8ProjectTest {
         );
 
         System.out.println("PASS: hasPath returned false because Unknown is not in the graph.");
+    }
+
+    @Test
+    void hasPathReturnsTrueWhenStartEqualsGoal() {
+
+        // create a new campus navigation graph
+        Unit8Project app = new Unit8Project();
+
+        // add the Library to the graph
+        app.addBuilding("Library");
+
+        // check if the Library has a path to itself
+        boolean result = app.hasPath("Library", "Library");
+
+        // check and verify if a valid building is reachable from itself
+        assertTrue(result, "hasPath should return true when the start and goal are the same building.");
+
+        // print a message when the test passes
+        System.out.println("PASS: Library has a path to itself.");
     }
 
 }
